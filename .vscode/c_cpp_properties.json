@@ -1,0 +1,31 @@
+{
+    "configurations": [
+        // {
+        //     "name": "WSL",
+        //     "intelliSenseMode": "gcc-x64",
+        //     "compilerPath": "/usr/bin/gcc",
+        //     "includePath": [
+        //         "${workspaceFolder}/**"
+        //     ],
+        //     "defines": [],
+        //     "cStandard": "c11",
+        //     "cppStandard": "c++17"
+        // },
+        {
+            "name": "win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\MinGW\\bin\\g++.exe",
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
