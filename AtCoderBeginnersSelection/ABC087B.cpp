@@ -1,21 +1,25 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main()
-{
-  int n, a, b;
-  cin >> n >> a >> b;
-  int res = 0;
-  for (int i = 0; i < n; i++)
-  {
-    string s = to_string(i);
-    int sum = 0;
-    cout << sum << endl;
-    for (int j = 0; j < (int)(s.length()); j++)
-    {
-      sum += int(s[j]);
-    }
-    if (a <= sum && sum <= b) res++;
+// 各桁の和を計算する関数
+int findSumOfDigits(int n) {
+  int sum = 0;
+  while (n > 0) { // n が 0 になるまで
+    sum += n % 10;
+    n /= 10;
   }
-  cout << res << endl;
+  return sum;
+}
+
+int main() {
+  int N, A, B;
+  cin >> N >> A >> B;
+  int total = 0;
+  for (int i = 1; i <= N; ++i) {
+    int sum = findSumOfDigits(i); // i の各桁の和
+    if (sum >= A && sum <= B) { //  i の各桁の和が A 以上 B 以下かどうか
+      total += i;
+    }
+  }
+  cout << total << endl;
 }
