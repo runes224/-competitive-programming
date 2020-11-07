@@ -3,6 +3,13 @@ using namespace std;
 
 int main()
 {
-  cout << "いつも" << 2525 << endl;
-  cout << "AtCoderくん" << endl;
+  int N;
+  cin >> N;
+  int result = 0;
+  for (int i = 1; i <= N; ++i)
+  {
+    result += i;
+  }
+
+  cout << result << endl;
 }
