@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define rep(i, c) for (int i = 0; i < (int)c; i++)
+const int INF = 1001001001;
 
 int main()
 {
@@ -8,48 +9,27 @@ int main()
   cin >> N;
   int tmpN = N;
   vector<int> a = {N};
-  rep(i, to_string(tmpN).length())
+  int ans = INF;
+  rep(i, to_string(tmpN).length()-1)
   {
-    if ((N % 3) == 0)
-    {
-      cout << i << endl;
-      return 0;
-    }
-    vector<int> tmpA;
+    vector<int> tmpA = {};
     for (int ele : a)
     {
       string str = to_string(ele);
-      if (str.length() == 1)
+      if (ele % 3 == 0) ans = min(ans, i);
+      if (str.length() == 1) continue;
+      string tmpStr = str;
+      rep(j, tmpStr.length())
       {
-        if (ele % 3 == 0)
-        {
-          cout << i + 1 << endl;
-          return 0;
-        }
-      }
-      else
-      {
-        string tmpStr = str;
-        rep(j, tmpStr.length()+1)
-        {
-          int tmp;
-          string tmpStr2 = str;
-          tmp = stoi(tmpStr2.erase(j, 1));
-          if (tmp % 3 == 0)
-          {
-            cout << i + 1 << endl;
-            return 0;
-          }
-          else
-          {
-            tmpA.push_back(tmp);
-          }
-        }
+        int tmp;
+        string tmpStr2 = str;
+        tmp = stoi(tmpStr2.erase(j, 1));
+        if (tmp % 3 == 0) tmpA.push_back(tmp);
       }
     }
     a.clear();
     a = tmpA;
-    tmpA.clear();
   }
-  cout << -1 << endl;
+  if (ans == INF) ans = -1;
+  cout << ans << endl;
 }
