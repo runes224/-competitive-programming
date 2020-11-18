@@ -13,15 +13,17 @@ int main()
   int ans = 0;
   int sum = 0;
 
-  vector<int> nums(n);
-  rep(i, n) nums[i] = i;
+  vector<int> nums;
+  // rep(i, n-1) nums[i] = i+1;
+  for (int i = 1; i < n; i++) nums.push_back(i);
   do
   {
     sum = 0;
-    if (nums[0] == 0) continue;
-    rep(i, n) {
-      sum += a[i][nums[i]];
+    sum += a[0][nums[0]];
+    rep(i, n-2) {
+      sum += a[nums[i]][nums[i+1]];
     }
+    sum += a[nums.back()][0];
     if (sum == k) ans++;
   } while (next_permutation(nums.begin(), nums.end()));
 
