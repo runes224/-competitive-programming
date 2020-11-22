@@ -8,5 +8,5 @@ int main()
   int a,b,c,d;
   cin >> a >> b;
   cin >> c >> d;
-  cout << ad-bc << endl;
+  cout << a*d-b*c << endl;
 }

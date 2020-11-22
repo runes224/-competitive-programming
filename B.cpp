@@ -5,8 +5,13 @@ using namespace std;
 
 int main()
 {
-  int a,b,c,d;
-  cin >> a >> b;
-  cin >> c >> d;
-  cout << ad-bc << endl;
+  int n,x;
+  string s;
+  cin >> n >> x;
+  cin >> s;
+  rep(i,n){
+    if (s[i] == 'o') x++;
+    else if (x>0) x--;
+  }
+  cout << x << endl;
 }
