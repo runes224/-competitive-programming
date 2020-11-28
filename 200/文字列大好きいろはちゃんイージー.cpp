@@ -13,6 +13,7 @@ int main()
     cin >> a[i];
   }
 
+
   sort(a.begin(), a.end());
   string result;
   for (string str : a) result += str;
