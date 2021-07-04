@@ -39,6 +39,4 @@ int main()
       d_arr.pop_back();
     }
   }
-  
-  
 }

@@ -1,30 +1,23 @@
 {
     "configurations": [
-        // {
-        //     "name": "WSL",
-        //     "intelliSenseMode": "gcc-x64",
-        //     "compilerPath": "/usr/bin/gcc",
-        //     "includePath": [
-        //         "${workspaceFolder}/**"
-        //     ],
-        //     "defines": [],
-        //     "cStandard": "c11",
-        //     "cppStandard": "c++17"
-        // },
         {
-            "name": "win32",
+            "name": "STM32",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/usr/include/**"
             ],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
-                "_UNICODE"
+                "_UNICODE",
+                "USE_FULL_LL_DRIVER",
+                "STM32F411xE"
             ],
-            "compilerPath": "/usr/bin/gcc",
-            "cStandard": "gnu17",
-            "cppStandard": "gnu++14",
-            "intelliSenseMode": "gcc-x64"
+            "windowsSdkVersion": "10.0.17763.0",
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4
